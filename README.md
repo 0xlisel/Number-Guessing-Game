@@ -1,3 +1,3 @@
 # Number-Guessing-Game
 
-Just a simple number guessing game
+Just a simple number guessing game.

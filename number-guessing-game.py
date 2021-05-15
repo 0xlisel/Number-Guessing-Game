@@ -27,7 +27,7 @@ def startGame():
                 print("Congratulations %s!! You guessed the number in %s guesses!" %(name, guesses))
                 break
             else:
-                print("Aw noo! I was thinking of %s " %(secretNumber))
+                print("Aw noo! I was thinking of %s." %(secretNumber))
                 break
 
 

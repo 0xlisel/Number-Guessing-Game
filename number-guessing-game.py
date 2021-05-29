@@ -1,6 +1,7 @@
 #A Number Guessing Game
 import random
 import time
+import os
 
 print("[----------------Number Guessing Game----------------]")
 time.sleep(0.5)
@@ -14,6 +15,7 @@ def introduction(name):
     print("You have 6 guesses to guess it correctly.\n")
 
 def startGame():
+    secretNumber = random.randint(1, 20)
     print("Time to start guessing..")
     time.sleep(1)
     for guesses in range(1, 7):
@@ -26,14 +28,32 @@ def startGame():
             if guess == secretNumber:
                 print("Congratulations %s!! You guessed the number in %s guesses!" %(name, guesses))
                 break
-            else:
-                print("Aw noo! I was thinking of %s." %(secretNumber))
-                break
+    else:
+        print("Aw noo! I was thinking of %s." %(secretNumber))
+
+def replayGame():
+    replay = input("\nDo you want to replay? [Y/N]  -> ").lower()
+    if replay == "y":
+        print("-----------------------------------------------")
+        time.sleep(1.5)
+        os.system('cls')
+        startGame()
+        replayGame()
+    elif replay == "n":
+        print("------------------------------------------------")
+        time.sleep(1)
+        print("Goodbye :(")
+        print("See you next time!")
+    else:
+        time.sleep(1)
+        print("Invalid option! Try again")
+        time.sleep(0.7)
+        replayGame()
 
 
 
 introduction(name)
-secretNumber = random.randint(1, 20)
 time.sleep(1.5)
 startGame()
 time.sleep(2)
+replayGame()
